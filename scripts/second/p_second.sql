@@ -1,22 +1,4 @@
-/*
-===============================================================================
-Stored Procedure: Load second Layer (first -> second)
-===============================================================================
-Script Purpose:
-    This stored procedure performs the ETL (Extract, Transform, Load) process to 
-    populate the 'second' schema tables from the 'first' schema.
-	Actions Performed:
-		- Truncates second tables.
-		- Inserts transformed and cleansed data from first into second tables.
-		
-Parameters:
-    None. 
-	  This stored procedure does not accept any parameters or return any values.
-
-Usage Example:
-    EXEC second.load_second;
-===============================================================================
-*/
+\
 
 CREATE OR ALTER PROCEDURE second.load_second AS
 BEGIN

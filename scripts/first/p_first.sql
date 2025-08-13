@@ -1,21 +1,4 @@
-/*
-===============================================================================
-Stored Procedure: Load first Layer (Source -> first)
-===============================================================================
-Script Purpose:
-    This stored procedure loads data into the 'first' schema from external CSV files. 
-    It performs the following actions:
-    - Truncates the first tables before loading data.
-    - Uses the `BULK INSERT` command to load data from csv Files to first tables.
 
-Parameters:
-    None. 
-	  This stored procedure does not accept any parameters or return any values.
-
-Usage Example:
-    EXEC first.load_first;
-===============================================================================
-*/
 CREATE OR ALTER PROCEDURE first.load_first AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME; 
@@ -34,7 +17,7 @@ BEGIN
 		TRUNCATE TABLE first.crm_cust_info;
 		PRINT '>> Inserting Data Into: first.crm_cust_info';
 		BULK INSERT first.crm_cust_info
-		FROM 'C:\sql\dwh_project\datasets\source_crm\cust_info.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_crm\cust_info.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -50,7 +33,7 @@ BEGIN
 
 		PRINT '>> Inserting Data Into: first.crm_prd_info';
 		BULK INSERT first.crm_prd_info
-		FROM 'C:\sql\dwh_project\datasets\source_crm\prd_info.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_crm\prd_info.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -65,7 +48,7 @@ BEGIN
 		TRUNCATE TABLE first.crm_sales_details;
 		PRINT '>> Inserting Data Into: first.crm_sales_details';
 		BULK INSERT first.crm_sales_details
-		FROM 'C:\sql\dwh_project\datasets\source_crm\sales_details.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_crm\sales_details.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -84,7 +67,7 @@ BEGIN
 		TRUNCATE TABLE first.erp_loc_a101;
 		PRINT '>> Inserting Data Into: first.erp_loc_a101';
 		BULK INSERT first.erp_loc_a101
-		FROM 'C:\sql\dwh_project\datasets\source_erp\loc_a101.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_erp\loc_a101.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -99,7 +82,7 @@ BEGIN
 		TRUNCATE TABLE first.erp_cust_az12;
 		PRINT '>> Inserting Data Into: first.erp_cust_az12';
 		BULK INSERT first.erp_cust_az12
-		FROM 'C:\sql\dwh_project\datasets\source_erp\cust_az12.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_erp\cust_az12.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -114,7 +97,7 @@ BEGIN
 		TRUNCATE TABLE first.erp_px_cat_g1v2;
 		PRINT '>> Inserting Data Into: first.erp_px_cat_g1v2';
 		BULK INSERT first.erp_px_cat_g1v2
-		FROM 'C:\sql\dwh_project\datasets\source_erp\px_cat_g1v2.csv'
+		FROM 'D:\projects\LOBB\warehouse\dataWareHouse\datasets\source_erp\px_cat_g1v2.csv'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',

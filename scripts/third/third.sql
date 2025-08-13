@@ -1,22 +1,4 @@
-/*
-===============================================================================
-DDL Script: Create third Views
-===============================================================================
-Script Purpose:
-    This script creates views for the third layer in the data warehouse. 
-    The third layer represents the final dimension and fact tables (Star Schema)
 
-    Each view performs transformations and combines data from the second layer 
-    to produce a clean, enriched, and business-ready dataset.
-
-Usage:
-    - These views can be queried directly for analytics and reporting.
-===============================================================================
-*/
-
--- =============================================================================
--- Create Dimension: third.dim_customers
--- =============================================================================
 IF OBJECT_ID('third.dim_customers', 'V') IS NOT NULL
     DROP VIEW third.dim_customers;
 GO

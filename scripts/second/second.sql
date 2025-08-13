@@ -1,13 +1,4 @@
-/*
-===============================================================================
-DDL Script: Create second Tables
-===============================================================================
-Script Purpose:
-    This script creates tables in the 'second' schema, dropping existing tables 
-    if they already exist.
-	  Run this script to re-define the DDL structure of 'first' Tables
-===============================================================================
-*/
+
 
 IF OBJECT_ID('second.crm_cust_info', 'U') IS NOT NULL
     DROP TABLE second.crm_cust_info;
